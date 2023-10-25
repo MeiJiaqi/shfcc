@@ -13,6 +13,16 @@ const routes = [
     {
         path:'/',
         component:()=>import('../views/Home.vue'),
+        children:[
+            {path:'/user', component:()=>import('../views/User.vue'),},
+            {path:'/data', component:()=>import('../views/UserData'),},
+            {path:'/suggest', component:()=>import('../views/Suggest.vue'),},
+            {path:'/home', component:()=>import('../views/PublicPage.vue'),},
+    ]
+    },
+    {
+        path:'/main',
+        component:()=>import('../views/Main.vue'),
     }
 ]
 
