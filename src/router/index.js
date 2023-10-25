@@ -5,24 +5,15 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 //配置路由
 const routes = [
-    /*
-    {
-        path:'/',
-        component:Main,
-        redirect:'/home',
-        children:[
-            {path:'home',component: Home},
-            {path:'user',component: User},
-            {path:'mall',component: Mall},
-            {path:'page1',component: PageOne},
-            {path:'page2',component: PageTwo},
-        ]
-    },
+
     {
         path:'/login',
-        component:Login,
+        component:()=>import('../views/Login.vue'),
+    },
+    {
+        path:'/',
+        component:()=>import('../views/Home.vue'),
     }
-     */
 ]
 
 const router = new VueRouter({
