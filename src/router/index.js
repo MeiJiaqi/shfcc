@@ -12,7 +12,7 @@ const routes = [
     },
     {
         path:'/',
-        component:()=>import('../views/Home.vue'),
+        component:()=>import('../views/Main.vue'),
         children:[
             {path:'/user', component:()=>import('../views/User.vue'),},
             {path:'/data', component:()=>import('../views/UserData'),},
