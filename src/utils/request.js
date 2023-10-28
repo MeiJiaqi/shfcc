@@ -2,11 +2,13 @@ import axios from "axios";
 //axios封装
 const http = axios.create({
     //通用请求的地址前缀
-    baseURL: '/api',
+    baseURL: 'http://123.60.82.103:8080',
     //超时时间
-    timeout: 10000,
+    timeout: 1000,
     //请求头
-    //headers: {'X-Custom-Header': 'foobar'}
+    // headers: {'X-Custom-Header': 'foobar',
+    // }
+
 });
 
 // 添加请求拦截器
