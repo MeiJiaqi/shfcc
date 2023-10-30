@@ -13,11 +13,13 @@ const routes = [
     {
         path:'/',
         component:()=>import('../views/Main.vue'),
+        redirect:'/user',
         children:[
             {path:'/user', component:()=>import('../views/User.vue'),},
             {path:'/data', component:()=>import('../views/UserData'),},
             {path:'/suggest', component:()=>import('../views/Suggest.vue'),},
             {path:'/home', component:()=>import('../views/PublicPage.vue'),},
+            {path: '/statistics',component:()=>import('../views/Statistics.vue')}
     ]
     },
     {

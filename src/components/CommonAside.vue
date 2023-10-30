@@ -1,39 +1,18 @@
 <template>
-  <el-menu
-      default-active="2"
-      class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose"
-      background-color="#415670"
-      text-color="#fff"
-      active-text-color="#ffd04b">
-    <el-submenu index="1">
-      <template slot="title">
-        <i class="el-icon-location"></i>
-        <span>导航一</span>
-      </template>
-      <el-menu-item-group>
-        <template slot="title">分组一</template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="1-3">选项3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="1-4-1">选项1</el-menu-item>
-      </el-submenu>
-    </el-submenu>
-    <el-menu-item index="2">
-      <i class="el-icon-menu"></i>
-      <span slot="title">导航二</span>
-    </el-menu-item>
-    <el-menu-item index="3">
-      <i class="el-icon-setting"></i>
-      <span slot="title">导航三</span>
-    </el-menu-item>
-  </el-menu>
+    <el-menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        @open="handleOpen"
+        @close="handleClose"
+        :collapse="isCollapse"
+        background-color="#fafafa"
+        text-color="#262626">
+     <h3>Medic Care</h3>
+      <el-menu-item @click="clickMenu(item)" v-for="item in menuData" :key="item.name" :index="item.name">
+        <i :class="`el-icon-${item.icon}`"></i>
+        <span slot="title">{{item.label}}</span>
+      </el-menu-item>
+    </el-menu>
 </template>
 
 <script>
@@ -41,6 +20,30 @@ export default {
   name: "CommonAside.vue",
   data(){
     return{
+          menuData:[
+            {
+              path: '/user',
+              name: 'user',
+              label: '主页',
+              icon: 's-home',
+              url: 'Home/User'
+            },
+            {
+              path: '/statistics',
+              name: 'statistics',
+              label: '数据统计',
+              icon: 'pie-chart',
+              url: 'Home/Statistics'
+            },
+            {
+              path: '/suggest',
+              name: 'suggest',
+              label: '建议',
+              icon: 'first-aid-kit',
+              url: 'Home/Suggest'
+            },
+
+          ],
 
     }
   },
@@ -50,7 +53,19 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
-    }
+    },
+    clickMenu(item){
+      // console.log(item)
+      if(this.$route.path !== item.path && !(this.$route.path ==='/home' &&(item.path === '/'))){
+        this.$router.push(item.path)
+      }
+    },
+
+  },
+  computed:{
+    isCollapse(){
+      return this.$store.state.tab.isCollapse
+    },
   }
 }
 </script>

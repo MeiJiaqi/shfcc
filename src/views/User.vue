@@ -146,7 +146,6 @@
           </el-col>
         </el-row>
    </div>
-
    <div class="medical-record">
         <el-card>
           <div class="down-title">
@@ -163,6 +162,7 @@
             </el-table>
           </div>
         </el-card>
+
    </div>
  </div>
 </template>
