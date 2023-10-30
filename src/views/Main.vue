@@ -8,7 +8,7 @@
       <common-header></common-header>
       </el-header>
 
-      <el-main style="background-color: rgb(240, 237, 237);padding:5px">
+      <el-main style="background-color: rgb(240, 237, 237);padding: 0">
         <!-- 路由出口 -->
         <!-- 路由匹配到的组件将渲染在这里 -->
         <router-view></router-view>

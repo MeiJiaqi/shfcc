@@ -7,6 +7,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 // 引入全局样式
 import './assets/css/common.css'
+import http from './utils/request'
+Vue.prototype.$http= http
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 new Vue({
