@@ -22,8 +22,10 @@ const routes = [
             {path:'/user', component:()=>import('../views/User.vue'),},
             {path:'/data', component:()=>import('../views/UserData.vue'),},
             {path:'/suggest', component:()=>import('../views/Suggest.vue'),},
+            {path:'/hospital', component:()=>import('../views/HospitalSuggest.vue'),},
+            {path:'/doctor', component:()=>import('../views/DoctorSuggest.vue'),},
             {path:'/home', component:()=>import('../views/PublicPage.vue'),},
-            {path: '/statistics',component:()=>import('../views/Statistics.vue')}
+            {path: '/statistics',component:()=>import('../views/Statistics.vue'),}
     ]
     },
     {

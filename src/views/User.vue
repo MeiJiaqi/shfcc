@@ -201,9 +201,10 @@ export default {
     }
   },
   mounted(){
+
       // 基于准备好的dom，初始化echarts实例
       const myChart = echarts.init(this.$refs.echarts);
-    myChart.setOption({
+       myChart.setOption({
       tooltip: {
         trigger: 'item'
       },

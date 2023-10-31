@@ -6,12 +6,24 @@
         @close="handleClose"
         :collapse="isCollapse"
         background-color="#fafafa"
-        text-color="#262626">
+        text-color="#262626"
+        >
      <h3>Medic Care</h3>
-      <el-menu-item @click="clickMenu(item)" v-for="item in menuData" :key="item.name" :index="item.name">
+      <el-menu-item @click="clickMenu(item)" v-for="item in noChildren" :key="item.name" :index="item.name">
         <i :class="`el-icon-${item.icon}`"></i>
         <span slot="title">{{item.label}}</span>
       </el-menu-item>
+
+      <el-submenu v-for="item in hasChildren" :key="item.label" :index="item.label">
+        <template slot="title">
+          <i :class="`el-icon-${item.icon}`"></i>
+          <span slot="title">{{item.label}}</span>
+        </template>
+        <el-menu-item-group  v-for="subItem in item.children" :key="subItem.path">
+          <el-menu-item @click="clickMenu(subItem)" :index="subItem.path">{{subItem.label}}</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+
     </el-menu>
 </template>
 
@@ -36,11 +48,25 @@ export default {
               url: 'Home/Statistics'
             },
             {
-              path: '/suggest',
-              name: 'suggest',
               label: '建议',
               icon: 'first-aid-kit',
-              url: 'Home/Suggest'
+              children: [
+                {
+                  path: '/doctor',
+                  name: 'doctor',
+                  label: '医生建议',
+                  icon: 'setting',
+                  url: 'Suggestions/DoctorSuggest'
+                },
+                {
+                  path: '/hospital',
+                  name: 'hospital',
+                  label: '医院建议',
+                  icon: 'setting',
+                  url: 'Suggestions/HospitalSuggest'
+                }
+              ]
+
             },
 
           ],
@@ -63,6 +89,14 @@ export default {
 
   },
   computed:{
+    //没有子菜单
+    noChildren(){
+      return this.menuData.filter(item => !item.children)
+    },
+    //有子菜单
+    hasChildren(){
+      return this.menuData.filter(item => item.children)
+    },
     isCollapse(){
       return this.$store.state.tab.isCollapse
     },

@@ -2,15 +2,15 @@
   <el-container id="main-contain">
     <el-aside class="el-aside" width="auto">
       <common-aside></common-aside>
-
     </el-aside>
+
     <el-container>
-      <div class="collapse-div" style="height: 100%;width: 1px;background-color: rgb(250,250,250)">
+      <div class="collapse-div" style="height: 100%;width: 1px;">
         <div class="collapse-item" style="" @click="handleMenu">
           <i :class="`el-icon-${icon}`" style="margin-left: 1px;margin-top: 15px" ></i>
         </div>
       </div>
-      <el-main style="background-color: rgb(240, 237, 237);padding: 0">
+      <el-main style="background-color: rgb(255, 255, 255);padding: 0">
         <!-- 路由出口 -->
         <!-- 路由匹配到的组件将渲染在这里 -->
         <router-view></router-view>
@@ -63,17 +63,19 @@ export default {
 
 }
 .collapse-div{
-   z-index: 99999;
+   z-index: 1010;
    position: relative;
+   user-select: none;
+  background-color: rgb(250,250,250);
+    right: 1px;
 
-   .collapse-item{
+  .collapse-item{
      position: absolute;
      top: 25%;
      width:16px;
      height: 50px;
      right: -8px;
      border-radius: 50px;
-     background-color: rgb(255, 255, 255);
      display: none
    }
 
