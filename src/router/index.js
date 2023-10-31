@@ -5,6 +5,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 //配置路由
 const routes = [
+    {
+        path:'/publicPage',
+        component:()=>import('../views/PublicPage.vue'),
+    },
 
     {
         path:'/login',
@@ -16,7 +20,7 @@ const routes = [
         redirect:'/user',
         children:[
             {path:'/user', component:()=>import('../views/User.vue'),},
-            {path:'/data', component:()=>import('../views/UserData'),},
+            {path:'/data', component:()=>import('../views/UserData.vue'),},
             {path:'/suggest', component:()=>import('../views/Suggest.vue'),},
             {path:'/home', component:()=>import('../views/PublicPage.vue'),},
             {path: '/statistics',component:()=>import('../views/Statistics.vue')}

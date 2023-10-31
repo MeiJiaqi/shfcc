@@ -15,9 +15,6 @@
         <li class="nav-item">
           <a class="nav-link" href="#Contact">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Contact">Contact</a>
-        </li>
       </div>
       <div class="header-right">
         <el-button class="nav-login" type="primary" round>登录注册</el-button>
