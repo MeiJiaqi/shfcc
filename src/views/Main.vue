@@ -80,7 +80,7 @@ export default {
    }
 
  }
-.collapse-div:hover .collapse-item{
+.collapse-div:hover  .collapse-item{
   display: block;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
 }

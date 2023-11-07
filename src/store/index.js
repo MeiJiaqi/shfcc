@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from 'vuex'
 import tab from './tab'
+import hospital from "./hospital";
 import doctorInfo from './doctorInfo'
 Vue.use(Vuex)
 
@@ -9,5 +10,6 @@ export default new Vuex.Store({
     modules:{
         tab,
         doctorInfo,
+        hospital,
     }
 })
