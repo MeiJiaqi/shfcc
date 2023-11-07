@@ -30,7 +30,7 @@
       </div>
 
       <div class="doctor-list">
-        <div class="doctor-item">
+        <div class="doctor-item" @click="viewDoctorInfo">
             <el-image
                 class="doctor-img"
                 :src="require('../assets/img/doctor/doctor1.jpg')"
@@ -51,7 +51,7 @@
             <p class="doctor-description">心脏病</p>
           </div>
         </div>
-        <div class="doctor-item">
+        <div class="doctor-item" @click="viewDoctorInfo">
           <el-image
               class="doctor-img"
               :src="require('../assets/img/doctor/doctor1.jpg')"
@@ -72,7 +72,7 @@
             <p class="doctor-description">心脏病</p>
           </div>
         </div>
-        <div class="doctor-item">
+        <div class="doctor-item" @click="viewDoctorInfo">
         <el-image
             class="doctor-img"
             :src="require('../assets/img/doctor/doctor1.jpg')"
@@ -93,7 +93,7 @@
           <p class="doctor-description">心脏病</p>
         </div>
       </div>
-        <div class="doctor-item">
+        <div class="doctor-item" @click="viewDoctorInfo">
           <el-image
               class="doctor-img"
               :src="require('../assets/img/doctor/doctor1.jpg')"
@@ -114,7 +114,7 @@
             <p class="doctor-description">心脏病</p>
           </div>
         </div>
-        <div class="doctor-item">
+        <div class="doctor-item" @click="viewDoctorInfo">
         <el-image
             class="doctor-img"
             :src="require('../assets/img/doctor/doctor1.jpg')"
@@ -135,7 +135,7 @@
           <p class="doctor-description">心脏病</p>
         </div>
       </div>
-        <div class="doctor-item">
+        <div class="doctor-item" @click="viewDoctorInfo">
         <el-image
             class="doctor-img"
             :src="require('../assets/img/doctor/doctor1.jpg')"
@@ -192,6 +192,11 @@ export default {
       ]
     }
   },
+  methods:{
+    viewDoctorInfo(){
+      this.$router.push('/doctorInfo')
+    }
+  }
 }
 </script>
 
@@ -265,7 +270,6 @@ export default {
         .doctor-img{
           width: 150px;
           height: 150px;
-
         }
         .doctor-name{
 
