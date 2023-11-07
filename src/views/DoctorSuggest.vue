@@ -20,148 +20,152 @@
     </el-carousel>
 
 
-    <div class="doctor-list-box">
-      <div class="list-header">
-        <el-image
-            style="width: 50px; height: 50px;margin-left: 10px"
-            :src="require('../assets/img/doc.png')"
-            fit="contain"></el-image>
-        <p>推荐医生</p>
-      </div>
+    <el-card>
+      <div class="doctor-list-box">
+        <div class="list-header">
+          <el-image
+              style="width: 50px; height: 50px;margin-left: 10px"
+              :src="require('../assets/img/doc.png')"
+              fit="contain"></el-image>
+          <p>推荐医生</p>
+        </div>
 
-      <div class="doctor-list">
-        <div class="doctor-item">
+        <div class="doctor-list">
+          <div class="doctor-item">
             <el-image
                 class="doctor-img"
                 :src="require('../assets/img/doctor/doctor1.jpg')"
                 style="border-radius: 50%"
             ></el-image>
-          <div class="item-box" style="width: 60%">
-            <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
-            <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
+            <div class="item-box" style="width: 60%">
+              <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
+              <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
+            </div>
+            <div class="item-box">
+              <p class="doctor-hospital">北京协和医院</p>
+              <p class="doctor-department">心血管内科</p>
+            </div>
+            <div class="item-dis" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px;">
+              <p style="color: rgb(153,153,173)">擅长：</p>
+              <p class="doctor-description">心脏病</p>
+            </div>
+            <div class="to-doctor" style="display: none;margin-top: 10px">
+              <el-button type="warning">点击查看医生信息</el-button>
+            </div>
+          </div>
+          <div class="doctor-item">
+            <el-image
+                class="doctor-img"
+                :src="require('../assets/img/doctor/doctor1.jpg')"
+                style="border-radius: 50%"
+            ></el-image>
+            <div class="item-box" style="width: 60%">
+              <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
+              <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
+            </div>
+
+            <div class="item-box">
+              <p class="doctor-hospital">北京协和医院</p>
+              <p class="doctor-department">心血管内科</p>
+            </div>
+
+            <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
+              <p style="color: rgb(153,153,173)">擅长：</p>
+              <p class="doctor-description">心脏病</p>
+            </div>
+          </div>
+          <div class="doctor-item">
+            <el-image
+                class="doctor-img"
+                :src="require('../assets/img/doctor/doctor1.jpg')"
+                style="border-radius: 50%"
+            ></el-image>
+            <div class="item-box" style="width: 60%">
+              <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
+              <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
+            </div>
+
+            <div class="item-box">
+              <p class="doctor-hospital">北京协和医院</p>
+              <p class="doctor-department">心血管内科</p>
+            </div>
+
+            <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
+              <p style="color: rgb(153,153,173)">擅长：</p>
+              <p class="doctor-description">心脏病</p>
+            </div>
+          </div>
+          <div class="doctor-item">
+            <el-image
+                class="doctor-img"
+                :src="require('../assets/img/doctor/doctor1.jpg')"
+                style="border-radius: 50%"
+            ></el-image>
+            <div class="item-box" style="width: 60%">
+              <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
+              <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
+            </div>
+
+            <div class="item-box">
+              <p class="doctor-hospital">北京协和医院</p>
+              <p class="doctor-department">心血管内科</p>
+            </div>
+
+            <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
+              <p style="color: rgb(153,153,173)">擅长：</p>
+              <p class="doctor-description">心脏病</p>
+            </div>
+          </div>
+          <div class="doctor-item">
+            <el-image
+                class="doctor-img"
+                :src="require('../assets/img/doctor/doctor1.jpg')"
+                style="border-radius: 50%"
+            ></el-image>
+            <div class="item-box" style="width: 60%">
+              <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
+              <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
+            </div>
+
+            <div class="item-box">
+              <p class="doctor-hospital">北京协和医院</p>
+              <p class="doctor-department">心血管内科</p>
+            </div>
+
+            <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
+              <p style="color: rgb(153,153,173)">擅长：</p>
+              <p class="doctor-description">心脏病</p>
+            </div>
+          </div>
+          <div class="doctor-item">
+            <el-image
+                class="doctor-img"
+                :src="require('../assets/img/doctor/doctor1.jpg')"
+                style="border-radius: 50%"
+            ></el-image>
+            <div class="item-box" style="width: 60%">
+              <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
+              <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
+            </div>
+
+            <div class="item-box">
+              <p class="doctor-hospital">北京协和医院</p>
+              <p class="doctor-department">心血管内科</p>
+            </div>
+
+            <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
+              <p style="color: rgb(153,153,173)">擅长：</p>
+              <p class="doctor-description">心脏病</p>
+            </div>
           </div>
 
-          <div class="item-box">
-            <p class="doctor-hospital">北京协和医院</p>
-            <p class="doctor-department">心血管内科</p>
-          </div>
 
-          <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
-            <p style="color: rgb(153,153,173)">擅长：</p>
-            <p class="doctor-description">心脏病</p>
-          </div>
         </div>
-        <div class="doctor-item">
-          <el-image
-              class="doctor-img"
-              :src="require('../assets/img/doctor/doctor1.jpg')"
-              style="border-radius: 50%"
-          ></el-image>
-          <div class="item-box" style="width: 60%">
-            <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
-            <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
-          </div>
 
-          <div class="item-box">
-            <p class="doctor-hospital">北京协和医院</p>
-            <p class="doctor-department">心血管内科</p>
-          </div>
 
-          <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
-            <p style="color: rgb(153,153,173)">擅长：</p>
-            <p class="doctor-description">心脏病</p>
-          </div>
-        </div>
-        <div class="doctor-item">
-        <el-image
-            class="doctor-img"
-            :src="require('../assets/img/doctor/doctor1.jpg')"
-            style="border-radius: 50%"
-        ></el-image>
-        <div class="item-box" style="width: 60%">
-          <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
-          <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
-        </div>
-
-        <div class="item-box">
-          <p class="doctor-hospital">北京协和医院</p>
-          <p class="doctor-department">心血管内科</p>
-        </div>
-
-        <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
-          <p style="color: rgb(153,153,173)">擅长：</p>
-          <p class="doctor-description">心脏病</p>
-        </div>
       </div>
-        <div class="doctor-item">
-          <el-image
-              class="doctor-img"
-              :src="require('../assets/img/doctor/doctor1.jpg')"
-              style="border-radius: 50%"
-          ></el-image>
-          <div class="item-box" style="width: 60%">
-            <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
-            <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
-          </div>
+    </el-card>
 
-          <div class="item-box">
-            <p class="doctor-hospital">北京协和医院</p>
-            <p class="doctor-department">心血管内科</p>
-          </div>
-
-          <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
-            <p style="color: rgb(153,153,173)">擅长：</p>
-            <p class="doctor-description">心脏病</p>
-          </div>
-        </div>
-        <div class="doctor-item">
-        <el-image
-            class="doctor-img"
-            :src="require('../assets/img/doctor/doctor1.jpg')"
-            style="border-radius: 50%"
-        ></el-image>
-        <div class="item-box" style="width: 60%">
-          <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
-          <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
-        </div>
-
-        <div class="item-box">
-          <p class="doctor-hospital">北京协和医院</p>
-          <p class="doctor-department">心血管内科</p>
-        </div>
-
-        <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
-          <p style="color: rgb(153,153,173)">擅长：</p>
-          <p class="doctor-description">心脏病</p>
-        </div>
-      </div>
-        <div class="doctor-item">
-        <el-image
-            class="doctor-img"
-            :src="require('../assets/img/doctor/doctor1.jpg')"
-            style="border-radius: 50%"
-        ></el-image>
-        <div class="item-box" style="width: 60%">
-          <p class="doctor-name" style="font-weight: bold;font-size:20px">张三</p>
-          <p class="doctor-position" style="font-size:10px;line-height: 20px">副主任医师</p>
-        </div>
-
-        <div class="item-box">
-          <p class="doctor-hospital">北京协和医院</p>
-          <p class="doctor-department">心血管内科</p>
-        </div>
-
-        <div class="" style="width: 80%;display: flex;flex-direction: row;margin-top: 10px">
-          <p style="color: rgb(153,153,173)">擅长：</p>
-          <p class="doctor-description">心脏病</p>
-        </div>
-      </div>
-
-
-      </div>
-
-
-    </div>
 
   </div>
 </template>
@@ -230,7 +234,7 @@ export default {
         padding: 15px 15px;
       }
     }
-    .doctor-list{
+    .doctor-list {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -239,22 +243,24 @@ export default {
       width: 100%;
       border: #cac6c6 1px solid;
       border-radius: 5px;
-      .doctor-item{
+
+      .doctor-item {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 300px;
         height: 300px;
-        margin: 20px;
-        box-shadow: 0 0 25px #cac6c6;
-
-        p{
+        margin: 10px;
+        box-shadow: 0 0 10px #cac6c6;
+        cursor: pointer;
+        p {
           font-size: 15px;
           font-weight: normal;
 
         }
-        .item-box{
+
+        .item-box {
           width: 80%;
           display: flex;
           flex-direction: row;
@@ -262,30 +268,22 @@ export default {
           margin-top: 10px;
         }
 
-        .doctor-img{
+        .doctor-img {
           width: 150px;
           height: 150px;
-
         }
-        .doctor-name{
 
-        }
-        .doctor-hospital{
-
-        }
-        .doctor-department{
-
-        }
-        .doctor-position{
-
-        }
-        .doctor-description
-        {
-
-        }
       }
+
     }
 
+  }
+  .doctor-item:hover  .to-doctor{
+    display: inline-flex;
+  }
+
+  .doctor-item:hover  .item-dis{
+    display: none;
   }
 
 }
