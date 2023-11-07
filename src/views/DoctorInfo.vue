@@ -4,11 +4,12 @@
       <div class="bg"></div>
       <div class="infoBox">
         <div class="lbox">
-          <img src="../assets/img/doctor/doctor1.jpg" alt="">
-<!--          <div class="skill-text">-->
-<!--            <span style="font-size: 22px;line-height: 50px;color:#fff;margin-top: 50px">专业擅长</span><br>-->
-<!--            <span style="font-size: 14px;color:#fff">心脏病</span>-->
-<!--          </div>-->
+          <img :src="require(getPictureURL)" alt="">
+          <div class="skill-text">
+            <img src="../assets/img/鲨鱼鳍.png" alt="">
+            <span style="font-size: 22px;line-height: 75px;color:#fff;margin-left: 25px;">专业擅长</span><br>
+            <span style="font-size: 14px;color:#fff;margin-left: 25px;">{{doctorInfo.expert}}</span>
+          </div>
         </div>
         <div class="rbox">
           <div class="info">
@@ -43,6 +44,10 @@ export default {
   methods:{
     back(){
       this.$router.push('/doctor')
+    },
+    getPictureURL(){
+      console.log(doctorInfo.pictureURL)
+      return doctorInfo.pictureURL
     }
   }
 }
@@ -67,7 +72,6 @@ export default {
       height: 600px;
       position: absolute;
       background: rgb(25,169,138);
-      //background: url("../assets/img/doctor/img.png");
       z-index: 1;
     }
     .infoBox{
@@ -89,15 +93,22 @@ export default {
           position: relative;
           top: 70px;
         }
-        //.skill-text{
-        //  width:250px;
-        //  height:130px;
-        //  background: rgb(90,130,207);
-        //  position: absolute;
-        //  bottom:50px;
-        //  right:-10px;
-        //  border-radius: 10px;
-        //}
+        .skill-text{
+          width:250px;
+          height:130px;
+          background: rgb(33,190,193);
+          position: absolute;
+          bottom:100px;
+          right:-10px;
+          border-radius: 10px;
+          img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: -40px;
+            left: 30px;
+          }
+        }
       }
       .rbox{
         float: left;
