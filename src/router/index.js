@@ -27,6 +27,7 @@ const routes = [
             {path:'/home', component:()=>import('../views/PublicPage.vue'),},
             {path: '/statistics',component:()=>import('../views/Statistics.vue'),},
             {path:'/doctorInfo', component:()=>import('../views/DoctorInfo.vue'),},
+            {path:'/hospitalInfo', component:()=>import('../views/HospitalInfo.vue'),},
     ]
     },
     {

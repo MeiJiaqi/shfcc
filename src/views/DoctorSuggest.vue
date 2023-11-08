@@ -33,7 +33,7 @@
         <div class="doctor-item" @click="viewDoctorInfo(doctor)" v-for="doctor in doctorList" :key="doctor.id">
             <el-image
                 class="doctor-img"
-                :src="doctor.pictureURL"
+                :src="require('../assets/img/doctor'+doctor.pictureURL.replace('../assets/img/doctor',''))"
                 style="border-radius: 50%"
             ></el-image>
           <div class="item-box" style="width: 60%">
@@ -152,7 +152,8 @@ export default {
   methods:{
     viewDoctorInfo(doctor){
       doctorInfo=doctor
-      console.log(doctorInfo)
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
       this.$router.push('/doctorInfo')
     }
   }
@@ -246,6 +247,13 @@ export default {
         {
 
         }
+
+      }
+      .doctor-item:hover{
+        cursor: pointer;
+        box-shadow: 4px 20px 40px 5px rgba(0, 0, 0, .1);
+        margin-top: 8px;
+        transition-duration: 300ms;
       }
     }
 

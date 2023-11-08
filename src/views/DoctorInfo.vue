@@ -4,7 +4,7 @@
       <div class="bg"></div>
       <div class="infoBox">
         <div class="lbox">
-          <img src="../assets/img/doctor/doctor1.jpg" alt="">
+          <img :src="require('../assets/img/doctor'+doctorInfo.pictureURL.replace('../assets/img/doctor',''))" alt="">
           <div class="skill-text">
             <img src="../assets/img/鲨鱼鳍.png" alt="">
             <span style="font-size: 22px;line-height: 75px;color:#fff;margin-left: 25px;">专业擅长</span><br>
@@ -45,10 +45,6 @@ export default {
     back(){
       this.$router.push('/doctor')
     },
-    getPictureURL(){
-      console.log(doctorInfo.pictureURL)
-      return doctorInfo.pictureURL
-    }
   }
 }
 

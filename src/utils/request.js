@@ -2,7 +2,7 @@ import axios from "axios";
 //axios封装
 const http = axios.create({
     //通用请求的地址前缀
-    baseURL: 'http://121.37.39.202:8080',
+    baseURL: 'http://121.37.39.202:8088',
     //超时时间
     timeout: 10000,
     //请求头
