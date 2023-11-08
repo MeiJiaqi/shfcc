@@ -45,10 +45,16 @@
         <div class="hospital-item" v-for="item in hos_List" :key="item.uid">
             <el-image
                 class="item-img"
-                src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+                :src="item.imgUrl"
                 style="width: 20%;height: 100%"
                 fit="contain"
-            >  </el-image>
+            >
+              <div slot="error" class="image-slot" style="width: 100%;height: 100%;display: flex;
+            align-items: center;justify-content:center;vertical-align: center">
+              <i class="el-icon-loading" style=""></i>
+            </div>
+
+            </el-image>
             <div class="item-text">
               <div class="row1" style="display: flex;flex-direction: row">
                 <p style="font-size: 25px">{{ item.title }}</p>
@@ -109,22 +115,53 @@ export default {
         label: '广州'
       }],
       value: '',
-      hos_List:[],
+      hos_List:[
+  //         {
+  //           address:"",
+  //           title:"",
+  //           imgUrl:"",
+  //           detailUrl:"",
+  //           url:"",
+  // },
+      ],
     }
   },
   methods: {
-    searchComplete(res){
-      console.log(res)
-      this.hos_List = res.Yr
-      this.$store.state.hospital.hospitalList=this.hos_List
-      this.$store.state.hospital.ifNeedSearch=false
-      console.log(this.hos_List)
+    async searchComplete(res) {
+
+      for (let i = 0; i < res.Yr.length; i++) {
+        let item = {
+          address: res.Yr[i].address,
+          title: res.Yr[i].title,
+          imgUrl: "",
+          detailUrl: res.Yr[i].detailUrl,
+          url: res.Yr[i].url,
+        }
+        this.hos_List.push(item)
+
+      }
+
+      this.$store.state.hospital.ifNeedSearch = false
+      for (let i = 0; i < this.hos_List.length; i++) {
+        let res = await this.$http.post('/test/picture', {
+          "current": 1,
+          "pageSize": 1,
+          "searchFiled": this.hos_List[i].title,
+        })
+        this.hos_List[i].imgUrl = res.data.data[0].url
+
+      }
+      this.$store.state.hospital.hospitalList = this.hos_List
+      this.$forceUpdate()
+
     }
   },
   mounted() {
     setTimeout(()=>{
     },2000)
     this.hos_List=this.$store.state.hospital.hospitalList
+
+
   }
 }
 </script>
