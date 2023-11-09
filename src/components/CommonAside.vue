@@ -5,7 +5,7 @@
         @open="handleOpen"
         @close="handleClose"
         :collapse="isCollapse"
-        background-color="#fafafa"
+        background-color="#ffffff"
         text-color="#262626"
         >
      <h3>Medic Care</h3>

@@ -10,7 +10,7 @@
           <i :class="`el-icon-${icon}`" style="margin-left: 1px;margin-top: 15px" ></i>
         </div>
       </div>
-      <el-main style="background-color: rgb(255, 255, 255);padding: 0">
+      <el-main style="background-color: rgb(250, 250, 250);padding: 0">
         <!-- 路由出口 -->
         <!-- 路由匹配到的组件将渲染在这里 -->
         <router-view></router-view>
