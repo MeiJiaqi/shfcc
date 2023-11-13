@@ -174,7 +174,7 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-    }, 2000)
+    }, 20000)
     this.hos_List = this.$store.state.hospital.hospitalList
 
 

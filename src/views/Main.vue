@@ -16,23 +16,40 @@
         <router-view></router-view>
       </el-main>
     </el-container>
+
+    <el-popover
+        placement="top-start"
+        trigger="manual"
+        class="chatvue"
+        popper-class="el_popover_class"
+        transition="fade-in-transition"
+        v-model="visiblechat"
+        ref="popoverRef"
+    >
+      <common-chat class="chatbox"/>
+      <el-button slot="reference" :icon="iconname" class="chat" circle @click="handleChat"></el-button>
+    </el-popover>
   </el-container>
 </template>
 
 <script>
 import CommonAside from "@/components/CommonAside";
 import CommonHeader from "@/components/CommonHeader";
+import CommonChat from '@/components/CommonChat.vue';
 export default {
   name: "Main",
   data(){
     return{
         icon: 'caret-left',//,'caret-right'
+        visiblechat:false,
+        iconname:'el-icon-message'  //el-icon-arrow-down
 
     }
   },
   components: {
     CommonAside,
-    CommonHeader
+    CommonHeader,
+    CommonChat,
   },
   methods:{
     handleMenu(){
@@ -44,6 +61,16 @@ export default {
       else
       {
         this.icon = 'caret-left'
+      }
+    },
+    handleChat(){
+      this.visiblechat=!this.visiblechat
+      if(this.visiblechat){
+        this.iconname='el-icon-arrow-down'
+      }
+      else
+      {
+        this.iconname='el-icon-message'
       }
     }
   }
@@ -83,5 +110,52 @@ export default {
 .collapse-div:hover  .collapse-item{
   display: block;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+.chatvue{
+  .chatbox{
+    position: fixed;
+    z-index: 100;
+    right:50px; bottom:50px;
+    margin-right: 50px;
+  }
+  .chat {
+    position: fixed;
+    z-index: 9999;
+    right:50px; bottom:50px;
+
+    width: 50px;
+    height: 50px;
+    background-color: #565185;
+
+    /deep/.el-icon-message{
+      font-size:20px;
+      color: white;
+      transition-duration: 0.5s;
+    }
+    /deep/.el-icon-arrow-down{
+      font-size:20px;
+      color: white;
+      transition-duration: 0.5s;
+    }
+    transition-duration: 0.5s;
+  }
+
+
+}
+
+.chat:hover{
+  width: 60px;
+  height: 60px;
+  right:45px; bottom:45px;
+  /deep/.el-icon-message{
+    font-size:25px;
+    color: white;
+  }
+  /deep/.el-icon-arrow-down{
+    font-size:25px;
+    color: white;
+  }
 }
 </style>
