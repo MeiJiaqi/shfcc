@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div id="l-map"></div>
     <div class="map">
       <baidu-map :scroll-wheel-zoom="true" center="成都">
         <bm-view class="bm-view"></bm-view>
@@ -42,8 +43,8 @@
           </el-option>
         </el-select>
       </div>
-      <div class="hospital-list">
-        <div class="hospital-item" @click="viewHospitalInfo(item)" v-for="item in hos_List" :key="item.uid">
+      <div class="hospital-list" >
+        <div class="hospital-item"  @click="viewHospitalInfo(item)" v-for="item in hos_List" :key="item.uid">
           <el-image
               class="item-img"
               :src="item.imgUrl"
@@ -137,30 +138,67 @@ export default {
       console.log(res)
 
       for (let i = 0; i < res.Yr.length; i++) {
-        let item = {
-          address: res.Yr[i].address,
-          title: res.Yr[i].title,
-          imgUrl: "",
-          detailUrl: res.Yr[i].detailUrl,
-          url: res.Yr[i].url,
-        }
-        this.hos_List.push(item)
+        this.$http.post('/test/picture', {       //获取医院图片
+          "current": 1,
+          "pageSize": 5,
+          "searchFiled": res.Yr[i].title,
+        }).then((ans) => {
+          //console.log(ans)
+          if(ans.data.data.length==0) {
 
+            this.$http.post('/test/picture', {       //再次获取医院图片
+              "current": 1,
+              "pageSize": 5,
+              "searchFiled": res.Yr[i].title,
+            }).then((ans) => {
+              //console.log(ans)
+              if(ans.data.data.length==0) {
+                let item = {
+                  address: res.Yr[i].address,
+                  title: res.Yr[i].title,
+                  imgUrl: '',
+                  detailUrl: res.Yr[i].detailUrl,
+                  url: res.Yr[i].url,
+
+                }
+                this.hos_List.push(item)
+              }
+              else
+              {
+                let item = {
+                  address: res.Yr[i].address,
+                  title: res.Yr[i].title,
+                  imgUrl: ans.data.data[0].url,
+                  detailUrl: res.Yr[i].detailUrl,
+                  url: res.Yr[i].url,
+
+                }
+                this.hos_List.push(item)
+              }
+            }).catch((err) => {
+              console.log(err)
+            })
+
+          }
+          else
+          {
+            let item = {
+              address: res.Yr[i].address,
+              title: res.Yr[i].title,
+              imgUrl: ans.data.data[0].url,
+              detailUrl: res.Yr[i].detailUrl,
+              url: res.Yr[i].url,
+
+            }
+            this.hos_List.push(item)
+          }
+        }).catch((err) => {
+          console.log(err)
+        })
       }
 
       this.$store.state.hospital.ifNeedSearch = false
-      for (let i = 0; i < this.hos_List.length; i++) {
-        let res = await this.$http.post('/test/picture', {
-          "current": 1,
-          "pageSize": 1,
-          "searchFiled": this.hos_List[i].title,
-        })
-        this.hos_List[i].imgUrl = res.data.data[0].url
-
-      }
       this.$store.state.hospital.hospitalList = this.hos_List
-      this.$forceUpdate()
-
     },
 
     viewHospitalInfo(hospital){
@@ -173,11 +211,7 @@ export default {
 
   },
   mounted() {
-    setTimeout(() => {
-    }, 20000)
     this.hos_List = this.$store.state.hospital.hospitalList
-
-
   }
 }
 </script>
