@@ -1,4 +1,4 @@
-<template>
+  <template>
   <lemon-imui
       width="380px"
       simple

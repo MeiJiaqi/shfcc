@@ -19,7 +19,7 @@
         </div>
 
         <div class="headerBox" id="header-right">
-          <button>登录</button>
+          <button @click="login">登录</button>
         </div>
       </div>
 
@@ -30,7 +30,12 @@
 
       <div class="content">
         <div class="contentBox" id="block1">
-          <p>简介</p>
+          <div class="block1-text-contain">
+            <p class="flag1">宫颈癌智能助手是一款基于人工智能技术的宫颈癌防治服务平台，旨在帮助妇女提高宫颈癌防治知识，提升宫颈癌筛查和诊疗的效率和准确性，降低宫颈癌的发病率和死亡率。</p>
+          </div>
+          <div class="block1-img-contain">
+            <img class="flag2" src="../assets/img/login2.png" alt="">
+          </div>
         </div>
         <div class="contentBox" id="block2">
           <p>功能</p>
@@ -48,22 +53,50 @@
 </template>
 
 <script>
-window.scroll({
-  behavior: 'smooth'
-});
-window.addEventListener('scroll', function(){
-  const header = document.querySelector('.header');
-  if(window.pageYOffset > 0){
-    header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
-  }else{
-    header.style.backgroundColor = 'rgba(255, 255, 255, 0)';
-  }
-});
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('active')
+    }else{
+      entry.target.classList.remove('active')
+    }
+  })
+})
+
+
 export default {
   name: "PublicPage.vue",
   data(){
     return {
     }
+  },
+  methods:{
+    login(){
+      this.$router.push('/login')
+    }
+
+  },
+  mounted() {
+
+    window.addEventListener('scroll', function(){
+      const header = document.querySelector('.header');
+      if(header==null){}
+      else if(window.pageYOffset > 0){
+        header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+      }else{
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+      }
+    });
+
+
+    const hiddenElements=document.querySelectorAll('.flag1,.flag2')
+    console.log(hiddenElements)
+    hiddenElements.forEach((element)=>{
+      observer.observe(element)
+    })
+  },
+  destroyed() {
+    window.removeEventListener('scroll');
   }
 }
 </script>
@@ -95,8 +128,8 @@ a{
 a:hover{
   color:rgb(82, 82, 82);
   text-decoration: underline;
-  text-decoration-color:#00d2ff;
-  text-underline-offset: 5px;
+  text-decoration-color:#21BEC1;
+  text-underline-offset: 10px;
 }
 .header{
   height: 100px;
@@ -139,16 +172,15 @@ a:hover{
   margin-left: 50px;
   border-radius: 10px;
   border: none;
-  background-color: #00a6ff;
+  background-image: -webkit-linear-gradient(40deg,rgb(33,190,193) 0%,rgb(25,169,138) 70%);
   font-size: 20px;
   font-weight: normal;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.3s ease
 }
 
 #header-right button:hover{
-  background-color: #00d2ff;
-
+  background-image: -webkit-linear-gradient(40deg,#69E6BB 0%,#94F7B2 70%);
 }
 
 .content{
@@ -156,8 +188,8 @@ a:hover{
 }
 
 .contentBox{
-  height: 1000px;
-  opacity: 0.5;
+  height: 100vh;
+  opacity: 1;
   text-align: center;
   margin-top: 30px;
   background-color: #fff;
@@ -168,10 +200,63 @@ a:hover{
   line-height: 1000px;
 }
 
+#block1{
+  display: flex;
+  flex-direction: row;
+  .block1-text-contain{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+      font-size: 40px;
+      line-height: 60px;
+      color: #000;
+      margin-left: 50px;
+      text-indent: 2em;
+      text-align: justify;
+    }
+
+
+
+
+
+  }
+
+  .flag1{
+    opacity: 0;
+    transition: all 2s;
+    transform: translate(-100%);
+  }
+  .flag2{
+    opacity: 0;
+    transition: all 2s;
+    transform: translate(100%);
+  }
+
+  .active{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+
+  .block1-img-contain{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+}
 
 .bg{
   width: 100%;
-  height: 800px;
+  height: 100vh;
   position: relative;
 }
 
