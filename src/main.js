@@ -4,6 +4,7 @@ import router from './router';
 import store from './store';
 import ElementUI from 'element-ui';
 import BaiduMap from 'vue-baidu-map'
+import scrollReveal from 'scrollreveal'
 // element-ui所提供的css样式
 import 'element-ui/lib/theme-chalk/index.css'
 // 引入全局样式

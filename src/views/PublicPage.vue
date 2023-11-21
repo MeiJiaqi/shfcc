@@ -31,14 +31,39 @@
       <div class="content">
         <div class="contentBox" id="block1">
           <div class="block1-text-contain">
-            <p class="flag1">宫颈癌智能助手是一款基于人工智能技术的宫颈癌防治服务平台，旨在帮助妇女提高宫颈癌防治知识，提升宫颈癌筛查和诊疗的效率和准确性，降低宫颈癌的发病率和死亡率。</p>
+            <p class="block1-text">宫颈癌智能助手是一款基于人工智能技术的宫颈癌防治服务平台，旨在帮助妇女提高宫颈癌防治知识，提升宫颈癌筛查和诊疗的效率和准确性，降低宫颈癌的发病率和死亡率。</p>
           </div>
           <div class="block1-img-contain">
-            <img class="flag2" src="../assets/img/login2.png" alt="">
+            <div class="block1-img"></div>
           </div>
         </div>
+
+
         <div class="contentBox" id="block2">
-          <p>功能</p>
+          <div class="block2-func-contain">
+            <div class="block2-img flag3">
+
+            </div>
+            <label class="block2-text flag7">切割分析</label>
+          </div>
+          <div class="block2-func-contain">
+            <div class="block2-img flag4">
+
+            </div>
+            <label class="block2-text flag7">诊断报告</label>
+          </div>
+          <div class="block2-func-contain">
+            <div class="block2-img flag5">
+
+            </div>
+            <label class="block2-text flag7">寻取建议</label>
+          </div>
+          <div class="block2-func-contain">
+            <div class="block2-img flag6">
+
+            </div>
+            <label class="block2-text flag7">在线咨询</label>
+          </div>
         </div>
         <div class="contentBox" id="block3">
           <p>优势</p>
@@ -53,6 +78,8 @@
 </template>
 
 <script>
+import scrollReveal from "scrollreveal";
+
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach((entry)=>{
     if(entry.isIntersecting){
@@ -68,6 +95,7 @@ export default {
   name: "PublicPage.vue",
   data(){
     return {
+      scrollReveal: scrollReveal(),
     }
   },
   methods:{
@@ -88,12 +116,84 @@ export default {
       }
     });
 
+    this.scrollReveal.reveal('.block1-text', {
+      // 动画的时长
+      duration: 1200,
+      // 延迟时间
+      delay: 0,
+      // 动画开始的位置，'bottom', 'left', 'top', 'right'
+      origin: "left",
+      // 回滚的时候是否再次触发动画
+      reset: true,
+      // 滚动的距离，单位可以用%，rem等
+      distance: "200%",
+      // 其他可用的动画效果
+      opacity: 0,
+      easing: 'ease-in-out',
+      scale: 1,
+    });
 
-    const hiddenElements=document.querySelectorAll('.flag1,.flag2')
-    console.log(hiddenElements)
-    hiddenElements.forEach((element)=>{
-      observer.observe(element)
-    })
+    this.scrollReveal.reveal('.block1-img', {
+      duration: 1200,
+      delay: 0,
+      origin: "right",
+      reset: true,
+      distance: "300px",
+      opacity: 0,
+      easing: 'ease-in-out',
+      scale: 1,
+    });
+
+    this.scrollReveal.reveal('.flag3', {
+      duration: 1200,
+      delay: 0,
+      origin: "left",
+      reset: true,
+      distance: "200%",
+      opacity: 0,
+      easing: 'ease-in-out',
+      scale: 1,
+    });
+    this.scrollReveal.reveal('.flag4', {
+      duration: 1200,
+      delay: 0,
+      origin: "top",
+      reset: true,
+      distance: "50%",
+      opacity: 0,
+      easing: 'ease-in-out',
+      scale: 1,
+    });
+    this.scrollReveal.reveal('.flag5', {
+      duration: 1200,
+      delay: 0,
+      origin: "bottom",
+      reset: true,
+      distance: "50%",
+      opacity: 0,
+      easing: 'ease-in-out',
+      scale: 1,
+    });
+    this.scrollReveal.reveal('.flag6', {
+      duration: 1200,
+      delay: 0,
+      origin: "right",
+      reset: true,
+      distance: "200%",
+      opacity: 0,
+      easing: 'ease-in-out',
+      scale: 1,
+    });
+    this.scrollReveal.reveal('.flag7', {
+      duration: 1200,
+      delay: 0,
+      origin: "bottom",
+      reset: true,
+      distance: "50px",
+      opacity: 0,
+      easing: 'ease-in-out',
+      scale: 1,
+    });
   },
 }
 </script>
@@ -106,7 +206,7 @@ export default {
 }
 
 .public-contain{
-  width: 100%;
+  width: 100vw;
   height: auto;
   position: relative;
   background-color: rgb(235,247,254);
@@ -114,6 +214,10 @@ export default {
 }
 
 .index-contain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   scroll-behavior: smooth;
 }
 
@@ -132,6 +236,9 @@ a:hover{
   height: 100px;
   width: 100%;
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   top:0;
   z-index: 3;
   border-width: 1px;
@@ -140,9 +247,7 @@ a:hover{
 }
 
 .headerBox{
-  position: relative;
-  float: left;
-  width: 33.33%;
+  width: 33%;
   height: 100%;
 
 }
@@ -186,6 +291,7 @@ a:hover{
 
 .contentBox{
   height: 100vh;
+  width: 100vw;
   opacity: 1;
   text-align: center;
   margin-top: 30px;
@@ -216,43 +322,54 @@ a:hover{
       text-align: justify;
     }
 
-
-
-
-
   }
-
-  .flag1{
-    opacity: 0;
-    transition: all 2s;
-    transform: translate(-100%);
-  }
-  .flag2{
-    opacity: 0;
-    transition: all 2s;
-    transform: translate(100%);
-  }
-
-  .active{
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-
   .block1-img-contain{
     width: 50%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .block1-img{
+      width: 40%;
+      height: 60%;
+      border-radius: 5px;
+      background-color: #21bec1;
+    }
 
   }
 
 }
 
+#block2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  .block2-func-contain{
+    width:18%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .block2-img{
+      width: 100%;
+      height: 60%;
+      border-radius: 5px;
+      background-color: #21bec1;
+    }
+    .block2-text{
+      font-size: 20px;
+      line-height: 30px;
+      color: #000;
+      margin-top: 20px;
+    }
+  }
+}
+
 .bg{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: relative;
 }
