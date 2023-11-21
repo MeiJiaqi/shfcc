@@ -95,9 +95,6 @@ export default {
       observer.observe(element)
     })
   },
-  destroyed() {
-    window.removeEventListener('scroll');
-  }
 }
 </script>
 
