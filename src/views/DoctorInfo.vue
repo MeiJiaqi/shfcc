@@ -8,7 +8,7 @@
           <div class="skill-text">
             <img src="../assets/img/鲨鱼鳍.png" alt="">
             <span style="font-size: 22px;line-height: 75px;color:#fff;margin-left: 25px;">专业擅长</span><br>
-            <span style="font-size: 14px;color:#fff;margin-left: 25px;">{{doctorInfo.expert}}</span>
+            <p style="font-size: 14px;color:#fff;margin:0 25px;text-align: justify;font-weight: normal">{{doctorInfo.expert}}</p>
           </div>
         </div>
         <div class="rbox">
@@ -69,12 +69,14 @@ export default {
       position: absolute;
       background: rgb(25,169,138);
       z-index: 1;
+      border-radius: 10px;
     }
     .infoBox{
       width: 100%;
       height: 100%;
       position: absolute;
       z-index: 2;
+
       .lbox{
         float: left;
         width:470px;
@@ -112,6 +114,8 @@ export default {
         height: 100%;
         z-index: 3;
         margin-left: 50px;
+        border-bottom: 1px solid rgb(25,169,138);
+        border-top: 1px solid rgb(25,169,138);
         .info{
           .title{
             line-height: 100px;

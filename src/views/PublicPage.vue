@@ -65,9 +65,52 @@
             <label class="block2-text flag7">在线咨询</label>
           </div>
         </div>
+
+
         <div class="contentBox" id="block3">
-          <p>优势</p>
+          <div class="block3-func-contain">
+
+            <div class="block3-contain" style="margin-top:15%">
+              <label class="block3-text block3-a1">AI诊断</label>
+              <div class="block3-img block3-a2" >
+
+              </div>
+            </div>
+
+          </div>
+          <div class="block3-func-contain">
+
+
+
+            <div class="block3-contain" style="margin-top:15%">
+              <div class="block3-img block3-a3">
+
+              </div>
+
+              <label class="block3-text block3-a4">深度模型</label>
+            </div>
+
+          </div>
+          <div class="block3-func-contain">
+            <div class="block3-contain" style="margin-bottom:12%">
+              <label class="block3-text block3-a5">功能丰富</label>
+              <div class="block3-img block3-a6">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="block3-func-contain">
+
+            <div class="block3-contain" style="margin-bottom:12%">
+              <div class="block3-img block3-a7">
+
+              </div>
+              <label class="block3-text block3-a8">界面友好</label>
+            </div>
+          </div>
         </div>
+
       </div>
 
       <div class="footer">
@@ -117,20 +160,13 @@ export default {
     });
 
     this.scrollReveal.reveal('.block1-text', {
-      // 动画的时长
       duration: 1200,
-      // 延迟时间
       delay: 0,
-      // 动画开始的位置，'bottom', 'left', 'top', 'right'
       origin: "left",
-      // 回滚的时候是否再次触发动画
       reset: true,
-      // 滚动的距离，单位可以用%，rem等
       distance: "200%",
-      // 其他可用的动画效果
       opacity: 0,
       easing: 'ease-in-out',
-      scale: 1,
     });
 
     this.scrollReveal.reveal('.block1-img', {
@@ -141,7 +177,6 @@ export default {
       distance: "300px",
       opacity: 0,
       easing: 'ease-in-out',
-      scale: 1,
     });
 
     this.scrollReveal.reveal('.flag3', {
@@ -152,7 +187,6 @@ export default {
       distance: "200%",
       opacity: 0,
       easing: 'ease-in-out',
-      scale: 1,
     });
     this.scrollReveal.reveal('.flag4', {
       duration: 1200,
@@ -162,7 +196,6 @@ export default {
       distance: "50%",
       opacity: 0,
       easing: 'ease-in-out',
-      scale: 1,
     });
     this.scrollReveal.reveal('.flag5', {
       duration: 1200,
@@ -172,7 +205,6 @@ export default {
       distance: "50%",
       opacity: 0,
       easing: 'ease-in-out',
-      scale: 1,
     });
     this.scrollReveal.reveal('.flag6', {
       duration: 1200,
@@ -182,7 +214,6 @@ export default {
       distance: "200%",
       opacity: 0,
       easing: 'ease-in-out',
-      scale: 1,
     });
     this.scrollReveal.reveal('.flag7', {
       duration: 1200,
@@ -192,7 +223,81 @@ export default {
       distance: "50px",
       opacity: 0,
       easing: 'ease-in-out',
-      scale: 1,
+    });
+    this.scrollReveal.reveal('.block3-a1', {
+      duration: 1000,
+      delay: 100,
+      origin: "left",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
+    });
+    this.scrollReveal.reveal('.block3-a2', {
+      duration: 1000,
+      delay: 0,
+      origin: "left",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
+    });
+
+    this.scrollReveal.reveal('.block3-a3', {
+      duration: 1000,
+      delay: 200,
+      origin: "right",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
+    });
+    this.scrollReveal.reveal('.block3-a4', {
+      duration: 1000,
+      delay: 300,
+      origin: "right",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
+    });
+    this.scrollReveal.reveal('.block3-a5', {
+      duration: 1000,
+      delay: 500,
+      origin: "left",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
+    });
+
+    this.scrollReveal.reveal('.block3-a6', {
+      duration: 1000,
+      delay: 400,
+      origin: "left",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
+    });
+
+    this.scrollReveal.reveal('.block3-a7', {
+      duration: 1000,
+      delay: 600,
+      origin: "right",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
+    });
+    this.scrollReveal.reveal('.block3-a8', {
+      duration: 1000,
+      delay: 700,
+      origin: "right",
+      reset: true,
+      distance: "250px",
+      opacity: 0,
+      easing: 'ease-in-out',
     });
   },
 }
@@ -298,11 +403,6 @@ a:hover{
   background-color: #fff;
 }
 
-.contentBox p{
-  font-size: 100px;
-  line-height: 1000px;
-}
-
 #block1{
   display: flex;
   flex-direction: row;
@@ -364,6 +464,46 @@ a:hover{
       line-height: 30px;
       color: #000;
       margin-top: 20px;
+    }
+  }
+}
+
+
+#block3{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .block3-func-contain{
+    width:49%;
+    height: 49%;
+
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .block3-contain{
+      width: 80%;
+      height: 60%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .block3-img{
+        width: 60%;
+        height: 100%;
+        border-radius: 5px;
+        background-color: #21bec1;
+      }
+      .block3-text{
+        font-size: 25px;
+        line-height: 30px;
+        color: #000;
+        margin: auto;
+      }
     }
   }
 }
