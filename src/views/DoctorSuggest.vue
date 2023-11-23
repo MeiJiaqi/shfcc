@@ -86,66 +86,7 @@ export default {
       ],
 
       doctorList:[
-        {
-          id:0,
-          name:'张三',
-          keshi:'肿瘤放射治疗科',
-          position:'主治医师',
-          expert:'擅长肺癌、直肠癌的放化疗、靶向治疗和免疫治疗。',
-          hospital:'四川大学华西医院',
-          profile:'2014年本科毕业于湘雅医学院临床医学系，保送至四川大学华西临床医学院肿瘤学硕博连读，期间担任住院医师。2019年毕业后在肿瘤中心工作至今，发表论文数篇。',
-          pictureURL:'../assets/img/doctor/doctor1.jpg',
-        },
-        {
-          id:1,
-          name:'李四',
-          keshi:'肿瘤放射治疗科',
-          position:'主治医师',
-          expert:'肿瘤放射治疗',
-          hospital:'四川大学华西医院',
-          profile:'2014年本科毕业于湘雅医学院临床医学系，保送至四川大学华西临床医学院肿瘤学硕博连读，期间担任住院医师。2019年毕业后在肿瘤中心工作至今，发表论文数篇。',
-          pictureURL:'../assets/img/doctor/doctor1.jpg',
-        },
-        {
-          id:2,
-          name:'王五',
-          keshi:'肿瘤放射治疗科',
-          position:'主治医师',
-          expert:'肿瘤放射治疗',
-          hospital:'四川大学华西医院',
-          profile:'2014年本科毕业于湘雅医学院临床医学系，保送至四川大学华西临床医学院肿瘤学硕博连读，期间担任住院医师。2019年毕业后在肿瘤中心工作至今，发表论文数篇。',
-          pictureURL:'../assets/img/doctor/doctor1.jpg',
-        },
-        {
-          id:3,
-          name:'赵六',
-          keshi:'肿瘤放射治疗科',
-          position:'主治医师',
-          expert:'肿瘤放射治疗',
-          hospital:'四川大学华西医院',
-          profile:'2014年本科毕业于湘雅医学院临床医学系，保送至四川大学华西临床医学院肿瘤学硕博连读，期间担任住院医师。2019年毕业后在肿瘤中心工作至今，发表论文数篇。',
-          pictureURL:'../assets/img/doctor/doctor1.jpg',
-        },
-        {
-          id:4,
-          name:'周七',
-          keshi:'肿瘤放射治疗科',
-          position:'主治医师',
-          expert:'肿瘤放射治疗',
-          hospital:'四川大学华西医院',
-          profile:'2014年本科毕业于湘雅医学院临床医学系，保送至四川大学华西临床医学院肿瘤学硕博连读，期间担任住院医师。2019年毕业后在肿瘤中心工作至今，发表论文数篇。',
-          pictureURL:'../assets/img/doctor/doctor1.jpg',
-        },
-        {
-          id:5,
-          name:'马八',
-          keshi:'肿瘤放射治疗科',
-          position:'主治医师',
-          expert:'肿瘤放射治疗',
-          hospital:'四川大学华西医院',
-          profile:'2014年本科毕业于湘雅医学院临床医学系，保送至四川大学华西临床医学院肿瘤学硕博连读，期间担任住院医师。2019年毕业后在肿瘤中心工作至今，发表论文数篇。',
-          pictureURL:'../assets/img/doctor/doctor1.jpg',
-        },
+
       ],
     }
   },
@@ -157,6 +98,27 @@ export default {
       this.$router.push('/doctorInfo')
 
     }
+  },
+  mounted() {
+    this.$http.post('/doctor/getDoctor',{
+      "pageCount": 1,
+      "pageSize": 5
+    }).then((ans)=>{
+      //console.log(ans.data.data)
+      for(let i=0;i<ans.data.data.length;i++){
+        let doctor={
+          id:ans.data.data[i].id,
+          name:ans.data.data[i].username,
+          keshi:ans.data.data[i].department,
+          position:ans.data.data[i].title,
+          expert:ans.data.data[i].expertise,
+          hospital:ans.data.data[i].hospital,
+          profile:ans.data.data[i].introduce,
+          pictureURL:'../assets/img/doctor/doctor1.jpg',
+        }
+        this.doctorList.push(doctor)
+      }
+    });
   }
 }
 </script>

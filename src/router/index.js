@@ -11,11 +11,15 @@ const routes = [
     },
 
     {
-        path:'/login',
+        path:'',
+        component:()=>import('../views/PublicPage.vue'),
+    },
+    {
+        path: '/login',
         component:()=>import('../views/Login.vue'),
     },
     {
-        path:'/',
+        path:'/main',
         component:()=>import('../views/Main.vue'),
         redirect:'/user',
         children:[

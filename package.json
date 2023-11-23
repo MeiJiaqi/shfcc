@@ -19,6 +19,7 @@
     "mockjs": "^1.1.0",
     "tinymce": "^5.0.3",
     "tinymce-plugin": "^0.0.3-beta.22",
+    "scrollreveal": "^4.0.9",
     "vue": "^2.6.14",
     "vue-baidu-map": "^0.21.22",
     "vue-router": "^3.6.5",
