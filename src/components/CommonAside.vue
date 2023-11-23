@@ -48,6 +48,13 @@ export default {
               url: 'Home/Statistics'
             },
             {
+              path: '/diagnose',
+              name: 'diagnose',
+              label: '智能诊断',
+              icon: 's-order',
+              url: 'Home/Diagnose'
+            },
+            {
               label: '建议',
               icon: 'first-aid-kit',
               children: [

@@ -8,14 +8,19 @@
                         :auto-location="true"></bm-geolocation>
         <!--        <bm-navigation anchor="BMAP_ANCHOR_TOP_LEFT" type="BMAP_NAVIGATION_CONTROL_LARGE"></bm-navigation>-->
         <bm-panorama></bm-panorama>
+<!--        "this.$store.state.hospital.ifNeedSearch"-->
         <bm-local-search
-            v-if="this.$store.state.hospital.ifNeedSearch"
+            v-if="true"
             location="成都"
             keyword="医院"
             :auto-viewport="true"
             @searchcomplete="searchComplete"
+            @infohtmlset="infohtmlset"
+            @markersset="markersset"
             :panel="false">
         </bm-local-search>
+
+
       </baidu-map>
     </div>
 
@@ -207,7 +212,22 @@ export default {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       this.$router.push('/hospitalInfo')
+    },
+
+    markersset(res)
+    {
+      console.log("markersset")
+      console.log(res)
+    },
+
+    infohtmlset(res)
+    {
+      console.log("infohtmlset")
+      console.log(res)
+
     }
+
+
 
   },
   mounted() {
