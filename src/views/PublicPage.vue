@@ -4,7 +4,7 @@
       <div class="header">
 
         <div class="headerBox" id="header-left">
-          <img id="logo" src="../assets/logo.png" alt="">
+          <div class="logo"></div>
         </div>
         <div class="headerBox" id="header-middle">
           <div class="headerItem" id="hItem1">
@@ -24,14 +24,14 @@
       </div>
 
       <div class="bg">
-        <img src="../assets/bg.jpg" alt="">
+        <div class="bg-img"></div>
         <h1>CervixAI——宫颈癌智能助手</h1>
       </div>
 
       <div class="content">
         <div class="contentBox" id="block1">
           <div class="block1-text-contain">
-            <p class="block1-text">宫颈癌智能助手是一款基于人工智能技术的宫颈癌防治服务平台，旨在帮助妇女提高宫颈癌防治知识，提升宫颈癌筛查和诊疗的效率和准确性，降低宫颈癌的发病率和死亡率。</p>
+            <p class="block1-text">宫颈癌智能助手是一款基于人工智能技术的宫颈癌诊断服务平台，旨在帮助妇女提高宫颈癌防治知识，提升宫颈癌筛查和诊疗的效率，降低宫颈癌的发病率和死亡率。</p>
           </div>
           <div class="block1-img-contain">
             <div class="block1-img"></div>
@@ -113,9 +113,9 @@
 
       </div>
 
-      <div class="footer">
-        footer
-      </div>
+<!--      <div class="footer">-->
+<!--        footer-->
+<!--      </div>-->
     </div>
   </div>
 </template>
@@ -153,7 +153,7 @@ export default {
       const header = document.querySelector('.header');
       if(header==null){}
       else if(window.pageYOffset > 0){
-        header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+        header.style.backgroundColor = 'rgb(250,250,250,1)';
       }else{
         header.style.backgroundColor = 'rgba(255, 255, 255, 0)';
       }
@@ -354,7 +354,20 @@ a:hover{
 .headerBox{
   width: 33%;
   height: 100%;
+}
 
+#header-left{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .logo{
+    width: 250px;
+    height: 250px;
+    background: url("../assets/img/svg/logo.svg") no-repeat;
+    background-size: 100% 100%;
+
+  }
 }
 
 .headerItem{
@@ -379,7 +392,7 @@ a:hover{
   margin-left: 50px;
   border-radius: 10px;
   border: none;
-  background-image: -webkit-linear-gradient(40deg,rgb(33,190,193) 0%,rgb(25,169,138) 70%);
+  background-color: #21bec1;
   font-size: 20px;
   font-weight: normal;
   cursor: pointer;
@@ -387,7 +400,7 @@ a:hover{
 }
 
 #header-right button:hover{
-  background-image: -webkit-linear-gradient(40deg,#69E6BB 0%,#94F7B2 70%);
+  background-color: #19a98a;
 }
 
 .content{
@@ -420,6 +433,7 @@ a:hover{
       margin-left: 50px;
       text-indent: 2em;
       text-align: justify;
+      font-style: italic;
     }
 
   }
@@ -431,10 +445,12 @@ a:hover{
     justify-content: center;
     align-items: center;
     .block1-img{
-      width: 40%;
+      width: 80%;
       height: 60%;
       border-radius: 5px;
       background-color: #21bec1;
+      background: url("../assets/img/svg/logo.svg") no-repeat;
+      background-size: 100% 100%;
     }
 
   }
@@ -458,6 +474,24 @@ a:hover{
       height: 60%;
       border-radius: 5px;
       background-color: #21bec1;
+    }
+
+    .flag3{
+      background: url("../assets/img/svg/切割分析.svg") no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .flag4{
+      background: url("../assets/img/svg/诊断报告.svg") no-repeat;
+      background-size: 100% 100%;
+    }
+    .flag5{
+      background: url("../assets/img/svg/寻取建议.svg") no-repeat;
+      background-size: 100% 100%;
+    }
+    .flag6{
+      background: url("../assets/img/svg/在线咨询.svg") no-repeat;
+      background-size: 80% 80%;
     }
     .block2-text{
       font-size: 20px;
@@ -504,6 +538,26 @@ a:hover{
         color: #000;
         margin: auto;
       }
+
+      .block3-a2{
+        background: url("../assets/img/svg/AI诊断.svg") no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .block3-a3{
+        background: url("../assets/img/svg/深度模型.svg") no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .block3-a6{
+        background: url("../assets/img/svg/功能丰富.svg") no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .block3-a7{
+        background: url("../assets/img/svg/界面友好.svg") no-repeat;
+        background-size: 100% 100%;
+      }
     }
   }
 }
@@ -512,6 +566,13 @@ a:hover{
   width: 100vw;
   height: 100vh;
   position: relative;
+
+  .bg-img{
+    width: 100%;
+    height: 80%;
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+  }
 }
 
 .bg img{
