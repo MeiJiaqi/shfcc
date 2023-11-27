@@ -99,8 +99,8 @@ export default {
   height: 100vh;
 
   background-color: rgb(250,250,250);
-  //background: url('../assets/img/login3.png') no-repeat fixed center;
-  //background-size: cover;
+  background: url('../assets/img/bg3.jpg') no-repeat fixed center;
+  background-size: cover;
 
 
   //background:
@@ -197,7 +197,7 @@ export default {
     height: 100%;
 
 
-    background: url('../assets/img/login2.png') no-repeat fixed
+    background: url('../assets/img/bg1.jpg') no-repeat fixed
     center;
     background-size: cover;
     opacity: 1;
