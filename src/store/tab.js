@@ -10,6 +10,8 @@ export default {
                 url: 'Home/Home'
             },
         ], //面包屑数据
+        ifHaveCT: false, //是否有CT
+        ifHavePTV: false, //是否有PTV
     },
     mutations:{
         //修改菜单展开收起的方法

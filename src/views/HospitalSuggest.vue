@@ -143,12 +143,13 @@ export default {
       console.log(res)
 
       for (let i = 0; i < res.Yr.length; i++) {
+        console.log(res.Yr[i].title)
         this.$http.post('/test/picture', {       //获取医院图片
           "current": 1,
           "pageSize": 5,
-          "searchFiled": res.Yr[i].title,
+          "searchField": res.Yr[i].title,
         }).then((ans) => {
-          //console.log(ans)
+            console.log(ans)
           if(ans.data.data.length==0) {
 
             this.$http.post('/test/picture', {       //再次获取医院图片
