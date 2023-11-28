@@ -4,7 +4,7 @@
 
       <div class="header-left">
         <img src="../assets/logo.png" >
-        <p>Medic Care</p>
+        <p>CervixAI</p>
 
         <li class="nav-item">
           <a class="nav-link" href="#home">Home</a>
@@ -31,8 +31,8 @@
         </el-carousel>
 
         <div class="page-text">
-          <h1>Medic Care</h1>
-          <p>Medic Care is a medical service platform that provides medical services for patients and doctors.</p>
+          <h1>CervixAI</h1>
+          <p>CervixAI is a medical service platform that provides medical services for patients and doctors.</p>
           <el-button type="primary" round>了解更多</el-button>
         </div>
       </div>

@@ -8,7 +8,10 @@
         background-color="#ffffff"
         text-color="#262626"
         >
-     <h3>Medic Care</h3>
+      <div class="aside-head-contain">
+        <div class="logo"></div>
+<!--        <h3>CervixAI</h3>-->
+      </div>
       <el-menu-item @click="clickMenu(item)" v-for="item in noChildren" :key="item.name" :index="item.name">
         <i :class="`el-icon-${item.icon}`"></i>
         <span slot="title">{{item.label}}</span>
@@ -116,4 +119,24 @@ export default {
   width: 200px;
   min-height: 1000px;
 }
+.aside-head-contain{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebeef5;
+  .logo{
+    position: absolute;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    background: url("../assets/img/svg/logo.svg") no-repeat;
+    background-size: 100% 100%;
+  }
+
+}
+
 </style>
