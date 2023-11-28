@@ -25,7 +25,10 @@
 
       <div class="bg">
         <div class="bg-img"></div>
-        <h1>CervixAI——宫颈癌智能助手</h1>
+        <div class="title-contain">
+          <h1>CervixAI</h1>
+          <h2>宫颈癌智能助手</h2>
+        </div>
       </div>
 
       <div class="content">
@@ -392,11 +395,12 @@ a:hover{
   margin-left: 50px;
   border-radius: 10px;
   border: none;
-  background-color: #21bec1;
+  background-color: rgb(121,220,170);
   font-size: 20px;
   font-weight: normal;
   cursor: pointer;
-  transition: all 0.3s ease
+  transition: all 0.2s ease;
+  font-family: 思源黑体;
 }
 
 #header-right button:hover{
@@ -434,6 +438,7 @@ a:hover{
       text-indent: 2em;
       text-align: justify;
       font-style: italic;
+      font-family: 思源黑体;
     }
 
   }
@@ -498,6 +503,7 @@ a:hover{
       line-height: 30px;
       color: #000;
       margin-top: 20px;
+      font-family: 思源黑体;
     }
   }
 }
@@ -537,6 +543,7 @@ a:hover{
         line-height: 30px;
         color: #000;
         margin: auto;
+        font-family: 思源黑体;
       }
 
       .block3-a2{
@@ -567,28 +574,35 @@ a:hover{
   height: 100vh;
   position: relative;
 
+
   .bg-img{
     width: 100%;
     height: 80%;
     background-image: url('../assets/bg.jpg');
     background-size: cover;
   }
+
+  .title-contain{
+    width:auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-160%, -110%);
+    text-align: center;
+    h1{
+      font-family: "Arial";
+      font-size: 110px;
+    }
+    h2{
+      font-family: 思源黑体;
+      font-size: 30px;
+
+    }
+  }
+
 }
 
-.bg img{
-  position:absolute;
-  top:0;
-  width: 100%;
-  height: auto;
-}
-
-.bg h1{
-  font-size: 50px;
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 #logo{
   position: absolute;
