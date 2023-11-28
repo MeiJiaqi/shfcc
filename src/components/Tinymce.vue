@@ -1,13 +1,14 @@
 <template>
   <div class='app-container'>
-    <h1>tinymce</h1>
-    <div id="tinydemo">
       <Editor
           class="tinymce"
           v-model="value"
           :init="init"
       >
       </Editor>
+
+    <div>
+
     </div>
   </div>
 </template>
@@ -18,7 +19,7 @@ import 'tinymce/themes/silver'
 import Editor from '@tinymce/tinymce-vue'
 import 'tinymce/themes/silver/theme'
 import 'tinymce/plugins/code'
-import "tinymce-plugin/plugins/tpImportword";
+
 import 'tinymce/plugins/textcolor'//颜色
 import 'tinymce/plugins/advlist' //高级列表
 import 'tinymce/plugins/autolink' //自动链接
@@ -32,8 +33,9 @@ import 'tinymce/plugins/table'
 import 'tinymce/plugins/fullscreen'
 import 'tinymce/plugins/preview'
 import 'tinymce/plugins/imagetools'
-
-
+import 'tinymce/icons/default'
+import 'tinymce-plugin/plugins/tpImportword'
+import 'tinymce/plugins/code'
 export default {
   name: "tinymce",
   props: {
@@ -44,14 +46,13 @@ export default {
     return{
       value: this.tinymceHtml,  // 父組件通过ref拿到该组件的值
       init: {
-
         language_url: '/tinymce/langs/zh_CN.js',   // 语言包
         language: 'zh_CN',
         height: 600,    // 编辑器高度
         skin_url: '/tinymce/skins/ui/oxide',    // 皮肤
         content_css: '/tinymce/skins/content/default/content.css',
-        plugins:  'advlist autolink link image lists charmap table fullscreen imagetools preview',   // 插件
-        toolbar: 'undo redo |  formatselect | forecolor backcolor bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent lists image | fullscreen | preview',
+        plugins:  'advlist autolink link image lists charmap table fullscreen  preview tpImportword code',   // 插件
+        toolbar: 'tpImportword |undo redo |  formatselect | forecolor backcolor bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent lists image | fullscreen code | preview',
         branding: false,
         menubar: false,
         content_style: "p {margin: 5px 0;}",

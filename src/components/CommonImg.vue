@@ -5,7 +5,7 @@
         <el-image  style="width: 256px; height: 256px;margin-left: 46px;"
         :src="require('../assets/images/'+url)"
         :preview-src-list="[
-           require('../assets/images/or/leijinqiong_o_'+index+'.jpg'),
+           require('../assets/images/'+imgType+index+'.jpg'),
           ]">
         </el-image>
         <div>
@@ -22,13 +22,25 @@
 
 <script>
 export default {
-
+    props:{
+        imgType:{
+            type:String,
+            default:'or/leijinqiong_o_'
+        },
+        index:{
+            type:Number,
+            default:0
+        },
+        length:{
+            type:Number,
+            default:193
+        }
+    },
     data(){
         return {
           
           baseURL:'D:/作业文件夹/深度学习文件/大创/gddp/data/dataset/rddata/rd/leijinqiong_rd_87.jpg',
-          url:'or/leijinqiong_o_'+'0'+'.jpg',
-          imgType:'or/leijinqiong_o_',
+          url:this.imgType+'0'+'.jpg',
           index:0,
           length:193,
         }
