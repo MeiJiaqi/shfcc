@@ -17,7 +17,7 @@
                 <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
                 <div class="el-upload__tip" slot="tip">只能上传mha文件，且不超过500mb</div>
               </el-upload>
-              <CommonImg img-type="or/leijinqiong_o_" index="0" length="193" style="margin-left: 5%" v-if="this.$store.state.tab.ifHaveCT"></CommonImg>
+              <CommonImg img-type="or/leijinqiong_o_" index="0" length="193" style="margin-left: 13%" v-if="this.$store.state.tab.ifHaveCT"></CommonImg>
             </el-card>
         </div>
         <div class="gen">
@@ -27,7 +27,7 @@
         <div class="ptv">
           <el-card style="width: 95%;height: 95%;margin-left: 2.4%;margin-top:2.2% ">
             <p>病灶展示区域</p>
-            <CommonImg  img-type="ptv/leijinqiong_PTV_" index="0" length="193" style="margin-left: 5%" v-if="this.$store.state.tab.ifHavePTV"></CommonImg>
+            <CommonImg  img-type="ptv/leijinqiong_PTV_" index="0" length="193" style="margin-left: 13%" v-if="this.$store.state.tab.ifHavePTV"></CommonImg>
             <p style="font-weight: normal;color: #cac6c6">暂无</p>
           </el-card>
         </div>
@@ -45,9 +45,10 @@
 
       <div class="item-list">
 
-        <div class="item">
+        <div class="item" style="width: 90%" v-for="(item, index)  in this.$store.state.report.reportList" :key="index" @click="changeReport(index)">
           <el-card>
-
+            <p>{{item.title}}</p>
+            <p>报告时间:{{item.time}}</p>
           </el-card>
         </div>
 
@@ -124,7 +125,7 @@ export default {
           '<p style="text-align: justify;">&nbsp;</p>\n' +
           '<p style="text-align: justify;">&nbsp;</p>\n' +
           '<p style="text-align: justify;">&nbsp;</p>\n' +
-          '<p style="text-align: center;">报告日期：2023年9月5日</p>\n' +
+          '<p style="text-align: center;">报告日期：2023年11月29日</p>\n' +
           '</td>\n' +
           '</tr>\n' +
           '</tbody>\n' +
@@ -179,7 +180,14 @@ export default {
       this.percentage=0
       this.$store.state.tab.ifHavePTV=!this.$store.state.tab.ifHavePTV
       this.content=this.content2
+      this.$store.state.report.reportContent=this.content2
+    },
+    changeReport(index){
+      this.content=this.$store.state.report.reportList[index].content
     }
+  },
+  mounted() {
+    this.content=this.$store.state.report.reportContent
   }
 }
 </script>
@@ -232,7 +240,18 @@ export default {
   .contain-right{
     width: 25%;
     height: 1000px;
+    .item-list{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
+      .item{
+        margin-top: 20px;
+      }
+      .item :hover{
+        cursor: pointer;
+      }
+    }
   }
 
 }

@@ -37,13 +37,13 @@
               <div class="left-box-row1" style="width: 100%;height: 300px" >
                 <div class="echart-base-box" style="height: 100%;width: 50%">
                   <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                    <p>标题</p>
+                    <p>接种HPV疫苗</p>
                   </div>
                   <div ref="echarts1" style="height: 100%;width: 100%;"></div>
                 </div>
                 <div class="echart-base-box" style="height: 100%;width: 50%">
                   <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                    <p>标题</p>
+                    <p>年龄段</p>
                   </div>
                   <div ref="echarts2" style="height: 100%;width: 100%;">
                   </div>
@@ -53,7 +53,7 @@
 
               <div class="echart-base-box" style="margin-top: 40px">
                 <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                  <p>标题</p>
+                  <p>典型疾病</p>
                 </div>
                 <div ref="echarts3" style="width: 100%;height: 400px"></div>
               </div>
@@ -63,13 +63,13 @@
               <div class="right-box-row1" style="width: 100%;height: 300px" >
                 <div class="echart-base-box" style="height: 100%;width: 50%">
                   <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                    <p>标题</p>
+                    <p>ABO血型</p>
                   </div>
                   <div ref="echarts4" style="height: 100%;width: 100%;"></div>
                 </div>
                 <div class="echart-base-box" style="height: 100%;width: 50%">
                   <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                    <p>标题</p>
+                    <p>RH血型</p>
                   </div>
                   <div ref="echarts5" style="height: 100%;width: 100%;">
                   </div>
@@ -78,18 +78,18 @@
 
               <div class="echart-base-box" style="margin-top: 40px">
                 <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                  <p>标题</p>
+                  <p>既往史</p>
                 </div>
                 <div class="right-box-row1" style="width: 100%;height: 300px;" >
                   <div class="echart-base-box" style="height: 100%;width: 50%">
                     <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                      <p>标题</p>
+                      <p>传染病史</p>
                     </div>
                     <div ref="echarts6" style="height: 100%;width: 100%;"></div>
                   </div>
                   <div class="echart-base-box" style="height: 100%;width: 50%">
                     <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                      <p>标题</p>
+                      <p>接种史</p>
                     </div>
                     <div ref="echarts7" style="height: 100%;width: 100%;">
                     </div>
@@ -98,13 +98,13 @@
                 <div class="right-box-row1" style="width: 100%;height: 300px;margin-top: 10px" >
                   <div class="echart-base-box" style="height: 100%;width: 50%">
                     <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                      <p>标题</p>
+                      <p>手术史</p>
                     </div>
                     <div ref="echarts8" style="height: 100%;width: 100%;"></div>
                   </div>
                   <div class="echart-base-box" style="height: 100%;width: 50%">
                     <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                      <p>标题</p>
+                      <p>输血史</p>
                     </div>
                     <div ref="echarts9" style="height: 100%;width: 100%;">
                     </div>
@@ -113,13 +113,13 @@
                 <div class="right-box-row1" style="width: 100%;height: 300px;margin-top: 10px" >
                   <div class="echart-base-box" style="height: 100%;width: 50%">
                     <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                      <p>标题</p>
+                      <p>过敏史</p>
                     </div>
                     <div ref="echarts10" style="height: 100%;width: 100%;"></div>
                   </div>
                   <div class="echart-base-box" style="height: 100%;width: 50%">
                     <div class="echart-base-box-title" style="background-color: rgb(244,244,244)">
-                      <p>标题</p>
+                      <p>家族史</p>
                     </div>
                     <div ref="echarts11" style="height: 100%;width: 100%;">
                     </div>
@@ -158,7 +158,7 @@ export default {
     const myChart11 = echarts.init(this.$refs.echarts11);
     myChart1.setOption({
       title: {
-        text: '性别',
+        text: 'HPV疫苗',
         left: 'center'
       },
       toolbox: {
@@ -179,12 +179,12 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '接种HPV疫苗',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 1048, name: '未接种' },
+            { value: 300, name: '接种' },
           ],
           emphasis: {
             itemStyle: {
@@ -324,7 +324,7 @@ export default {
     });
     myChart4.setOption({
       title: {
-        text: '性别',
+        text: 'ABO血型',
         left: 'center'
       },
       toolbox: {
@@ -345,12 +345,14 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '血型',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 1048, name: 'A型' },
+            { value: 735, name: 'B型' },
+            { value: 735, name: 'O型' },
+            { value: 200, name: '不确定' },
           ],
           emphasis: {
             itemStyle: {
@@ -364,7 +366,7 @@ export default {
     });
     myChart5.setOption({
       title: {
-        text: '性别',
+        text: 'Rh血型',
         left: 'center'
       },
       toolbox: {
@@ -385,12 +387,14 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: 'Rh血型',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 1048, name: '阴型' },
+            { value: 735, name: '阳型' },
+            { value: 735, name: '不确定' },
+            { value: 735, name: '未检出' },
           ],
           emphasis: {
             itemStyle: {
@@ -404,7 +408,7 @@ export default {
     });
     myChart6.setOption({
       title: {
-        text: '性别',
+        text: '传染病史',
         left: 'center'
       },
       toolbox: {
@@ -425,12 +429,12 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '传染病史',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 1048, name: '无病史' },
+            { value: 735, name: '有病史' },
           ],
           emphasis: {
             itemStyle: {
@@ -444,7 +448,7 @@ export default {
     });
     myChart7.setOption({
       title: {
-        text: '性别',
+        text: '接种史',
         left: 'center'
       },
       toolbox: {
@@ -465,12 +469,12 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '接种史',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 735, name: '有接种史' },
+            { value: 735, name: '无接种史' },
           ],
           emphasis: {
             itemStyle: {
@@ -484,7 +488,7 @@ export default {
     });
     myChart8.setOption({
       title: {
-        text: '性别',
+        text: '手术史',
         left: 'center'
       },
       toolbox: {
@@ -505,12 +509,12 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '手术史',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 400, name: '有手术史' },
+            { value: 735, name: '无手术史' },
           ],
           emphasis: {
             itemStyle: {
@@ -524,7 +528,7 @@ export default {
     });
     myChart9.setOption({
       title: {
-        text: '性别',
+        text: '输血史',
         left: 'center'
       },
       toolbox: {
@@ -545,12 +549,12 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '输血史',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 836, name: '有输血史' },
+            { value: 735, name: '无输血史' },
           ],
           emphasis: {
             itemStyle: {
@@ -564,7 +568,7 @@ export default {
     });
     myChart10.setOption({
       title: {
-        text: '性别',
+        text: '过敏史',
         left: 'center'
       },
       toolbox: {
@@ -585,12 +589,12 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '过敏史',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 756, name: '有过敏史' },
+            { value: 735, name: '无过敏史' },
           ],
           emphasis: {
             itemStyle: {
@@ -604,7 +608,7 @@ export default {
     });
     myChart11.setOption({
       title: {
-        text: '性别',
+        text: '家族史',
         left: 'center'
       },
       toolbox: {
@@ -625,12 +629,12 @@ export default {
       },
       series: [
         {
-          name: '性别',
+          name: '家族史',
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '女' },
-            { value: 735, name: '男' },
+            { value: 1048, name: '有家族史' },
+            { value: 735, name: '无家族史' },
           ],
           emphasis: {
             itemStyle: {

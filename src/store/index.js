@@ -4,6 +4,7 @@ import tab from './tab'
 import hospital from "./hospital";
 import doctorInfo from './doctorInfo'
 import hospitalInfo from "./hospitalInfo";
+import report from "./report";
 Vue.use(Vuex)
 
 //创建vuex实例
@@ -13,5 +14,6 @@ export default new Vuex.Store({
         doctorInfo,
         hospital,
         hospitalInfo,
+        report,
     }
 })
