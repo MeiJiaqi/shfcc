@@ -2,10 +2,10 @@
   <div class="doctor-contain">
     <div class="header" style="height: 100px;width: 80%;margin-top: 50px">
 
-      <img src="../assets/img/医生库.png">
+      <img class="logo" src="../assets/img/svg/logo.svg">
       <div class="input" style="width: 60%">
         <el-input v-model="input" placeholder="输入医生名称进行查询" ></el-input>
-        <el-button type="primary" icon="el-icon-search"></el-button>
+        <el-button type="primary" icon="el-icon-search" @click="searchDocotor"></el-button>
       </div>
 
     </div>
@@ -33,7 +33,7 @@
         <div class="doctor-item" @click="viewDoctorInfo(doctor)" v-for="doctor in doctorList" :key="doctor.id">
             <el-image
                 class="doctor-img"
-                :src="require('../assets/img/doctor'+doctor.pictureURL.replace('../assets/img/doctor',''))"
+                :src="require('../assets/img/doctor/doctorList/'+doctor.pictureURL.replace('../assets/img/doctor/doctorList/',''))"
                 style="border-radius: 50%"
             ></el-image>
           <div class="item-box" style="width: 60%">
@@ -97,6 +97,23 @@ export default {
       document.documentElement.scrollTop = 0;
       this.$router.push('/doctorInfo')
 
+    },
+
+
+    searchDocotor(){
+      console.log('searchDocotor')
+      this.doctorList.length=0
+      let doctor={
+        id:'2',
+        name:'曾梅华',
+        keshi:'皮肤科',
+        position:'副主任医师',
+        expert:'擅长足藓，湿疹，银屑病等',
+        hospital:'解放军南京总医院',
+        profile:'十余年三甲医院工作经验，擅长皮炎湿疹，荨麻疹，体股癣，儿童皮肤病，梅毒，淋病非淋，尖锐湿疣等常见皮肤病性病',
+        pictureURL:'../assets/img/doctor/doctorList/曾梅华.jpg',
+      }
+      this.doctorList.push(doctor)
     }
   },
   mounted() {
@@ -114,7 +131,7 @@ export default {
           expert:ans.data.data[i].expertise,
           hospital:ans.data.data[i].hospital,
           profile:ans.data.data[i].introduce,
-          pictureURL:'../assets/img/doctor/doctor1.jpg',
+          pictureURL:'../assets/img/doctor/doctorList/'+ans.data.data[i].username+'.jpg',
         }
         this.doctorList.push(doctor)
       }
@@ -124,6 +141,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
+.logo{
+  width: 200px;
+  height: 200px;
+}
 
 
 .doctor-contain{
@@ -218,6 +240,7 @@ export default {
         margin-top: 8px;
         transition-duration: 300ms;
       }
+
     }
 
   }
