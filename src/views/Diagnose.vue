@@ -48,7 +48,8 @@
         <div class="item" style="width: 90%" v-for="(item, index)  in this.$store.state.report.reportList" :key="index" @click="changeReport(index)">
           <el-card>
             <p>{{item.title}}</p>
-            <p>报告时间:{{item.time}}</p>
+            <p style="font-weight: normal">报告时间:{{item.time}}<br> 编号：{{item.code}}</p>
+
           </el-card>
         </div>
 
@@ -98,7 +99,7 @@ export default {
           '<p>&nbsp;</p>\n' +
           '<p style="text-align: center;"><span style="font-weight: bold; min-height: 24px; font-size: 24px;">智能医学宫颈癌诊断报告单</span></p>\n' +
           '<p style="text-indent: 21px;">&nbsp;</p>\n' +
-          '<p style="text-indent: 21px;">编号：1000210</p>\n' +
+          '<p style="text-indent: 21px;">编号：1000220</p>\n' +
           '</td>\n' +
           '</tr>\n' +
           '<tr style="height: 4.5px;">\n' +
@@ -247,6 +248,11 @@ export default {
 
       .item{
         margin-top: 20px;
+
+        p{
+          padding: 10px 10px;
+        }
+
       }
       .item :hover{
         cursor: pointer;

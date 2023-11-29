@@ -4,7 +4,7 @@
      <el-row><el-card>
        <el-col :span="10">
          <div class="user-info-left">
-            <p style="font-size: 20px;"><span>您好</span>，韦明江</p>
+            <p style="font-size: 20px;"><span>您好</span>，张三</p>
            <p>本页面显示的是你的基本信息</p>
            <p>您可以选择左边的模块查看更多的信息</p>
 
@@ -32,7 +32,7 @@
                </div>
                <div class="info-item">
                  <p class="item-name">性别</p>
-                 <p class="item-code">男</p>
+                 <p class="item-code">女</p>
                </div>
              </div>
              <div class="info-item-1">

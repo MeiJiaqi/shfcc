@@ -25,7 +25,7 @@ export default {
         return{
             user: {
         id: "1",
-        displayName: "梅佳期",
+        displayName: "张三",
         avatar: "",
       },
 
@@ -38,7 +38,7 @@ export default {
     IMUI.initContacts([
       {
         id: "2",
-        displayName: "韦明江",
+        displayName: "医生",
         avatar: "",
         type: "single",
         index: "T",
@@ -99,11 +99,19 @@ export default {
       };
 
       const messages = [
-        message("我是个傻逼", otherUser),
-        message("快来写代码"),
-        message("ok", otherUser),
+        message("医生我不舒服"),
+        message("具体是哪个部位", otherUser),
+        message("肚子"),
+        message("有无出血", otherUser),
+        message("没有"),
+        message("有没有吃药", otherUser),
+        message("没有"),
+        message("好的，我这就给你开药", otherUser),
+        message("好的，谢谢医生"),
+
       ];
       next(messages, true);
+      console.log(messages)
     },
   },
 }

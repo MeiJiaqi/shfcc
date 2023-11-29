@@ -47,6 +47,7 @@ export default {
                     '</div>',
                 time:'2023-1-5',
                 title:'智能医学宫颈癌诊断报告单-张三',
+                code:'1000210',
             },
             {
                 content:'<div class="tp-importword-centent-body">\n' +
@@ -57,7 +58,7 @@ export default {
                     '<p>&nbsp;</p>\n' +
                     '<p style="text-align: center;"><span style="font-weight: bold; min-height: 24px; font-size: 24px;">智能医学宫颈癌诊断报告单</span></p>\n' +
                     '<p style="text-indent: 21px;">&nbsp;</p>\n' +
-                    '<p style="text-indent: 21px;">编号：1000210</p>\n' +
+                    '<p style="text-indent: 21px;">编号：1000212</p>\n' +
                     '</td>\n' +
                     '</tr>\n' +
                     '<tr style="height: 4.5px;">\n' +
@@ -93,6 +94,7 @@ export default {
                     '</div>',
                 time:'2023-2-5',
                 title:'智能医学宫颈癌诊断报告单-张三',
+                code: '1000212',
             },
             {
                 content:'<div class="tp-importword-centent-body">\n' +
@@ -103,7 +105,7 @@ export default {
                     '<p>&nbsp;</p>\n' +
                     '<p style="text-align: center;"><span style="font-weight: bold; min-height: 24px; font-size: 24px;">智能医学宫颈癌诊断报告单</span></p>\n' +
                     '<p style="text-indent: 21px;">&nbsp;</p>\n' +
-                    '<p style="text-indent: 21px;">编号：1000210</p>\n' +
+                    '<p style="text-indent: 21px;">编号：1000215</p>\n' +
                     '</td>\n' +
                     '</tr>\n' +
                     '<tr style="height: 4.5px;">\n' +
@@ -139,6 +141,7 @@ export default {
                     '</div>',
                 time:'2023-3-5',
                 title:'智能医学宫颈癌诊断报告单-张三',
+                code:'1000215',
             },
             {
                 content:'<div class="tp-importword-centent-body">\n' +
@@ -149,7 +152,7 @@ export default {
                     '<p>&nbsp;</p>\n' +
                     '<p style="text-align: center;"><span style="font-weight: bold; min-height: 24px; font-size: 24px;">智能医学宫颈癌诊断报告单</span></p>\n' +
                     '<p style="text-indent: 21px;">&nbsp;</p>\n' +
-                    '<p style="text-indent: 21px;">编号：1000210</p>\n' +
+                    '<p style="text-indent: 21px;">编号：1000216</p>\n' +
                     '</td>\n' +
                     '</tr>\n' +
                     '<tr style="height: 4.5px;">\n' +
@@ -185,6 +188,7 @@ export default {
                     '</div>',
                 time:'2023-4-5',
                 title:'智能医学宫颈癌诊断报告单-张三',
+                code:'1000216',
             },
             {
                 content:'<div class="tp-importword-centent-body">\n' +
@@ -195,7 +199,7 @@ export default {
                     '<p>&nbsp;</p>\n' +
                     '<p style="text-align: center;"><span style="font-weight: bold; min-height: 24px; font-size: 24px;">智能医学宫颈癌诊断报告单</span></p>\n' +
                     '<p style="text-indent: 21px;">&nbsp;</p>\n' +
-                    '<p style="text-indent: 21px;">编号：1000210</p>\n' +
+                    '<p style="text-indent: 21px;">编号：1000218</p>\n' +
                     '</td>\n' +
                     '</tr>\n' +
                     '<tr style="height: 4.5px;">\n' +
@@ -231,6 +235,7 @@ export default {
                     '</div>',
                 time:'2023-5-5',
                 title:'智能医学宫颈癌诊断报告单-张三',
+                code:'1000218',
             },
             {
                 content:'<div class="tp-importword-centent-body">\n' +
@@ -241,7 +246,7 @@ export default {
                     '<p>&nbsp;</p>\n' +
                     '<p style="text-align: center;"><span style="font-weight: bold; min-height: 24px; font-size: 24px;">智能医学宫颈癌诊断报告单</span></p>\n' +
                     '<p style="text-indent: 21px;">&nbsp;</p>\n' +
-                    '<p style="text-indent: 21px;">编号：1000210</p>\n' +
+                    '<p style="text-indent: 21px;">编号：1000219</p>\n' +
                     '</td>\n' +
                     '</tr>\n' +
                     '<tr style="height: 4.5px;">\n' +
@@ -277,6 +282,7 @@ export default {
                     '</div>',
                 time:'2023-6-5',
                 title:'智能医学宫颈癌诊断报告单-张三',
+                code:'1000219',
             },
         ], //报告列表
     },
