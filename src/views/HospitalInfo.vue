@@ -69,7 +69,7 @@
             <span>门诊服务：核酸检测发热门诊急诊</span><br>
             <span>门诊时间：周一至周五：上午8:00-12:00；下午12:30-16:30；周六上午8:00-12:00；下午12:30-16:00；周日8:00-12:00</span><br>
             <span>医院电话：028-85422114</span><br>
-            <span>医院地址：四川省成都市国学巷37号</span><span><a class="addr-nav" target="_blank" href="https://map.baidu.com/@11585034.140820738,3564944.7012796346,17z/latlng%3D30.6465%252C104.069%26title%3D%25E5%259B%259B%25E5%25B7%259D%25E5%25A4%25A7%25E5%25AD%25A6%25E5%258D%258E%25E8%25A5%25BF%25E5%258C%25BB%25E9%2599%25A2%26content%3D%25E5%259B%259B%25E5%25B7%259D%25E7%259C%2581%25E6%2588%2590%25E9%2583%25BD%25E5%25B8%2582%25E5%259B%25BD%25E5%25AD%25A6%25E5%25B7%25B737%25E5%258F%25B7%26autoOpen%3Dtrue">导航></a></span>
+            <span>医院地址：四川省成都市温江区永宁街道芙蓉大道三段363号</span><span><a class="addr-nav" target="_blank" href="https://map.baidu.com/@11585034.140820738,3564944.7012796346,17z/latlng%3D30.6465%252C104.069%26title%3D%25E5%259B%259B%25E5%25B7%259D%25E5%25A4%25A7%25E5%25AD%25A6%25E5%258D%258E%25E8%25A5%25BF%25E5%258C%25BB%25E9%2599%25A2%26content%3D%25E5%259B%259B%25E5%25B7%259D%25E7%259C%2581%25E6%2588%2590%25E9%2583%25BD%25E5%25B8%2582%25E5%259B%25BD%25E5%25AD%25A6%25E5%25B7%25B737%25E5%258F%25B7%26autoOpen%3Dtrue">导航></a></span>
           </div>
         </div>
 
@@ -225,13 +225,17 @@ export default {
         }
       }
       .text-contain{
-        .title h1{
-          color: #fff;
-          font-size: 24px;
-          font-family: Arial;
-          margin-top: 10px;
-          margin-bottom:10px;
+        width: auto;
+        .title{
+          h1{
+            color: #fff;
+            font-size: 24px;
+            font-family: Arial;
+            margin-top: 10px;
+            margin-bottom:10px;
+          }
         }
+
         .jiancheng{
 
           margin-bottom: 7px;
